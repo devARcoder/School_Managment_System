@@ -8,6 +8,7 @@ const inter = Inter({subsets: ["latin"]});
 export const metadata: Metadata = {
   title: "Paradise - Dashboard",
   description: "Created by devARcoder - Abdur Razzaq",
+  icons: "/logo.png"
 };
 
 export default function RootLayout({
