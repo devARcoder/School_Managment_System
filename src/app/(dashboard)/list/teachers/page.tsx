@@ -39,7 +39,7 @@ const columns = [
   {
     header: "Phone",
     accessor: "phone",
-    className: "hidden lg:table-cell",
+    className: "hidden md:table-cell",
   },
   {
     header: "Address",
@@ -70,7 +70,7 @@ const TeacherListPage = () => {
             <td className="hidden md:table-cell">{item.subjects?.join(",")}</td>
             <td className="hidden md:table-cell">{item.classes?.join(",")}</td>
             <td className="hidden md:table-cell">{item.phone}</td>
-            <td className="hidden md:table-cell">{item.address}</td>
+            <td className="hidden lg:table-cell">{item.address}</td>
 
             <td>
                 <div className="flex items-center gap-2">
