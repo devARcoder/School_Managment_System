@@ -15,7 +15,6 @@ const columns = [
   {
     header: "Class Name",
     accessor: "name",
-    className: "hidden md:table-cell",
   },
   {
     header: "Capacity",
