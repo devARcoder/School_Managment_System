@@ -6,13 +6,13 @@ import Image from "next/image";
 import Link from "next/link";
 type Student = {
   id: number;
-  teacherId: string;
+  studentId: string;
   name: string;
   email?: string;
   photo: string;
-  phone: number;
-  subjects: string[];
-  classes: string[];
+  phone?: number;
+  grade: number,
+  class: string,
   address: string;
 };
 const columns = [
@@ -47,7 +47,7 @@ const columns = [
 ];
 
 const StudentListPage = () => {
-  const renderRow = (item: Teacher) => (
+  const renderRow = (item: Student) => (
     <tr
       key={item.id}
       className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-[#F1F0FF]"
@@ -62,13 +62,12 @@ const StudentListPage = () => {
         />
         <div className="flex flex-col ">
           <h3 className="font-semibold">{item.name}</h3>
-          <p className="text-xs text-gray-500">{item.email}</p>
+          <p className="text-xs text-gray-500">{item.class}</p>
         </div>
       </td>
 
-      <td className="hidden md:table-cell">{item.teacherId}</td>
-      <td className="hidden md:table-cell">{item.subjects?.join(",")}</td>
-      <td className="hidden md:table-cell">{item.classes?.join(",")}</td>
+      <td className="hidden md:table-cell">{item.studentId}</td>
+      <td className="hidden md:table-cell">{item.grade}</td>
       <td className="hidden md:table-cell">{item.phone}</td>
       <td className="hidden md:table-cell">{item.address}</td>
 
