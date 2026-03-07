@@ -6,7 +6,7 @@ const inter = Inter({subsets: ["latin"]});
 
 
 export const metadata: Metadata = {
-  title: "Paradise - Dashboard",
+  title: "PMS - Paradise Managment System",
   description: "Created by devARcoder - Abdur Razzaq",
   icons: "/logo.png"
 };
