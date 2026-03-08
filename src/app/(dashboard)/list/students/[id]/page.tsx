@@ -4,7 +4,7 @@ import Performance from "@/components/Performance";
 import Image from "next/image";
 import Link from "next/link";
 
-const SingleTeacherPage = () => {
+const SingleStudentPage = () => {
   return (
     <div className="flex-1 flex flex-col p-4 gap-4 xl:flex-row">
        {/* LEFT */}
@@ -15,7 +15,7 @@ const SingleTeacherPage = () => {
           <div className="bg-lamaSky py-6 px-4 rounded-md flex-1 flex gap-4">
             <div className="w-1/3">
               <Image
-                src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                src="https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200"
                 alt=""
                 width={144}
                 height={144}
@@ -93,8 +93,8 @@ const SingleTeacherPage = () => {
                 className="w-6 h-6"
               />
               <div className="">
-                <h1 className="text-xl font-semibold">2</h1>
-                <span className="text-sm text-gray-400">Branches</span>
+                <h1 className="text-xl font-semibold">6th</h1>
+                <span className="text-sm text-gray-400">Grade</span>
               </div>
             </div>
             {/* CARD */}
@@ -107,7 +107,7 @@ const SingleTeacherPage = () => {
                 className="w-6 h-6"
               />
               <div className="">
-                <h1 className="text-xl font-semibold">6</h1>
+                <h1 className="text-xl font-semibold">18</h1>
                 <span className="text-sm text-gray-400">Lessons</span>
               </div>
             </div>
@@ -121,7 +121,7 @@ const SingleTeacherPage = () => {
                 className="w-6 h-6"
               />
               <div className="">
-                <h1 className="text-xl font-semibold">6</h1>
+                <h1 className="text-xl font-semibold">6A</h1>
                 <span className="text-sm text-gray-400">Classes</span>
               </div>
             </div>
@@ -129,7 +129,7 @@ const SingleTeacherPage = () => {
         </div>
         {/* BOTTOM */}
         <div className="mt-4 bg-white rounded-md p-4 h-[800px]">
-          <h1>Teacher&apos;s Schedule</h1>
+          <h1 className="text-xl font-semibold">Student&apos;s Schedule</h1>
           <BigCalendar />
         </div>
       </div>
@@ -138,11 +138,11 @@ const SingleTeacherPage = () => {
       <div className="bg-white p-4 rounded-md">
         <h1 className="text-xl font-semibold">Shortcuts</h1>
         <div className="mt-4 flex items-center gap-4 flex-wrap text-xs text-gray-500">
-          <Link href="/list/classes"><span className="p-3 rounded-md bg-[#EDF9FD]">Teacher&apos;s Classes</span></Link>
-          <Link className="p-3 rounded-md bg-[#F1F0FF]" href="/list/students">Teacher&apos;s Students</Link>
-          <Link className="p-3 rounded-md bg-[#FEFCEB]" href="/list/lessons">Teacher&apos;s Lessons</Link>
-          <Link className="p-3 rounded-md bg-pink-50" href="/list/exams">Teacher&apos;s Exams</Link>
-          <Link className="p-3 rounded-md bg-[#EDF9FD]" href="/list/assignments">Teacher&apos;s Assignments</Link>
+          <Link href="/list/lessons"><span className="p-3 rounded-md bg-[#EDF9FD]">Student&apos;s Lessons</span></Link>
+          <Link className="p-3 rounded-md bg-[#F1F0FF]" href="/list/teachers">Student&apos;s Teachers</Link>
+          <Link className="p-3 rounded-md bg-pink-50" href="/list/exams">Student&apos;s Exams</Link>
+          <Link className="p-3 rounded-md bg-[#EDF9FD]" href="/list/assignments">Student&apos;s Assignments</Link>
+          <Link className="p-3 rounded-md bg-[#FEFCEB]" href="/list/results">Student&apos;s Results</Link>
         </div>
       </div>
       <Performance />
@@ -152,4 +152,4 @@ const SingleTeacherPage = () => {
   );
 };
 
-export default SingleTeacherPage;
+export default SingleStudentPage;
