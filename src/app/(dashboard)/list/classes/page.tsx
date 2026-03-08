@@ -1,7 +1,7 @@
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
-import { classesData, role, subjectsData } from "@/lib/data";
+import { classesData, role } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 type Class = {
@@ -52,7 +52,7 @@ const ClassListPage = () => {
         <div className="flex items-center gap-2">
           <Link href={`/list/teacher/${item.id}`}>
             <button className="w-7 h-7 flex items-center justify-center rounded-full bg-[#C3EBFA]">
-              <Image src="/view.png" alt="" width={16} height={16} />
+              <Image src="/edit.png" alt="" width={16} height={16} />
             </button>
           </Link>
           {role === "admin" && (
@@ -67,7 +67,7 @@ const ClassListPage = () => {
   return (
     <div className="p-4 bg-white rounded-md flex-1 m-4 mt-0">
       <div className="top flex justify-between items-center">
-        <h1 className="hidden md:block text-lg font-semibold">All Subjects</h1>
+        <h1 className="hidden md:block text-lg font-semibold">All Classes</h1>
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
           <TableSearch />
           <div className="flex items-center gap-4 self-end">
