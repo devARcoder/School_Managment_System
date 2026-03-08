@@ -1,6 +1,10 @@
-const TeacherForm = () => {
+const TeacherForm = ({type, data}:{type: "create" | "update";
+    data?: any;
+}) => {
   return (
-    <div className=''>TeacherForm</div>
+    <form action="">
+        form
+    </form>
   )
 }
 
