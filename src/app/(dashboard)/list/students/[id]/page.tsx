@@ -6,8 +6,8 @@ import Link from "next/link";
 
 const SingleStudentPage = () => {
   return (
-    <div className="flex-1 flex flex-col p-4 gap-4 xl:flex-row">
-       {/* LEFT */}
+    <div className="flex-1 p-4 flex flex-col gap-4 xl:flex-row">
+      {/* LEFT */}
       <div className="w-full xl:w-2/3">
         {/* TOP */}
         <div className="flex flex-col lg:flex-row gap-4">
@@ -15,7 +15,7 @@ const SingleStudentPage = () => {
           <div className="bg-lamaSky py-6 px-4 rounded-md flex-1 flex gap-4">
             <div className="w-1/3">
               <Image
-                src="https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                src="https://images.pexels.com/photos/5414817/pexels-photo-5414817.jpeg?auto=compress&cs=tinysrgb&w=1200"
                 alt=""
                 width={144}
                 height={144}
@@ -23,27 +23,7 @@ const SingleStudentPage = () => {
               />
             </div>
             <div className="w-2/3 flex flex-col justify-between gap-4">
-              <div className="flex items-center gap-4">
-                <h1 className="text-xl font-semibold">Leonard Snyder</h1>
-                {/* {role === "admin" && <FormModal
-                  table="teacher"
-                  type="update"
-                  data={{
-                    id: 1,
-                    username: "deanguerrero",
-                    email: "deanguerrero@gmail.com",
-                    password: "password",
-                    firstName: "Dean",
-                    lastName: "Guerrero",
-                    phone: "+1 234 567 89",
-                    address: "1234 Main St, Anytown, USA",
-                    bloodType: "A+",
-                    dateOfBirth: "2000-01-01",
-                    sex: "male",
-                    img: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1200",
-                  }}
-                />} */}
-              </div>
+              <h1 className="text-xl font-semibold">Cameron Moran</h1>
               <p className="text-sm text-gray-500">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               </p>
@@ -122,31 +102,41 @@ const SingleStudentPage = () => {
               />
               <div className="">
                 <h1 className="text-xl font-semibold">6A</h1>
-                <span className="text-sm text-gray-400">Classes</span>
+                <span className="text-sm text-gray-400">Class</span>
               </div>
             </div>
           </div>
         </div>
         {/* BOTTOM */}
         <div className="mt-4 bg-white rounded-md p-4 h-[800px]">
-          <h1 className="text-xl font-semibold">Student&apos;s Schedule</h1>
+          <h1>Student&apos;s Schedule</h1>
           <BigCalendar />
         </div>
       </div>
-
-      <div className="right w-full xl:w-1/3 flex flex-col gap-4">
-      <div className="bg-white p-4 rounded-md">
-        <h1 className="text-xl font-semibold">Shortcuts</h1>
-        <div className="mt-4 flex items-center gap-4 flex-wrap text-xs text-gray-500">
-          <Link href="/list/lessons"><span className="p-3 rounded-md bg-[#EDF9FD]">Student&apos;s Lessons</span></Link>
-          <Link className="p-3 rounded-md bg-[#F1F0FF]" href="/list/teachers">Student&apos;s Teachers</Link>
-          <Link className="p-3 rounded-md bg-pink-50" href="/list/exams">Student&apos;s Exams</Link>
-          <Link className="p-3 rounded-md bg-[#EDF9FD]" href="/list/assignments">Student&apos;s Assignments</Link>
-          <Link className="p-3 rounded-md bg-[#FEFCEB]" href="/list/results">Student&apos;s Results</Link>
+      {/* RIGHT */}
+      <div className="w-full xl:w-1/3 flex flex-col gap-4">
+        <div className="bg-white p-4 rounded-md">
+          <h1 className="text-xl font-semibold">Shortcuts</h1>
+          <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
+            <Link className="p-3 rounded-md bg-lamaSkyLight" href="/">
+              Student&apos;s Lessons
+            </Link>
+            <Link className="p-3 rounded-md bg-lamaPurpleLight" href="/">
+              Student&apos;s Teachers
+            </Link>
+            <Link className="p-3 rounded-md bg-pink-50" href="/">
+              Student&apos;s Exams
+            </Link>
+            <Link className="p-3 rounded-md bg-lamaSkyLight" href="/">
+              Student&apos;s Assignments
+            </Link>
+            <Link className="p-3 rounded-md bg-lamaYellowLight" href="/">
+              Student&apos;s Results
+            </Link>
+          </div>
         </div>
-      </div>
-      <Performance />
-      <Announcements />      
+        <Performance />
+        <Announcements />
       </div>
     </div>
   );
