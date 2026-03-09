@@ -1,7 +1,27 @@
 "use client"
+import dynamic from "next/dynamic"
 import Image from "next/image";
-import { useState } from "react";
-import TeacherForm from "./form/TeacherForm";
+import { JSX, useState } from "react";
+// import TeacherForm from "./form/TeacherForm";
+// import StudentForm from "./form/StudentForm";
+
+const TeacherForm = dynamic(()=> import("./form/TeacherForm"), {
+  loading: () => <h1>Loading...</h1>
+});
+const StudentForm = dynamic(()=> import("./form/StudentForm"), {
+  loading: () => <h1>Loading...</h1>
+});
+const ParentForm = dynamic(()=> import("./form/ParentForm"), {
+  loading: () => <h1>Loading...</h1>
+});
+
+const forms: {
+  [key: string]: (type: "create" | "update", data?: any) => JSX.Element;
+} = {
+  teacher: (type, data) => <TeacherForm type={type} data={data} />,
+  student: (type, data) => <StudentForm type={type} data={data} />,
+  parent: (type, data) => <ParentForm type={type} data={data} />,
+};
 
 const FormModal = ({table, type, data, id}:{
   table: "teacher"
@@ -30,9 +50,9 @@ const FormModal = ({table, type, data, id}:{
     return type === "delete" && id ? <form action="" className="p-4 flex flex-col gap-4 ">
       <span className="text-center font-medium">All data will be lost. are you sure want to dlete this {table}?</span>
       <button className="bg-red-700 text-white px-4 py-2 rounded-md border-none w-max self-center">Delete</button>
-    </form> : (
-      <TeacherForm type="create" />
-    )
+    </form> : type === "create" || type ==="update" ? (
+      forms[table](type, data)
+    ): "Form not found";
   }
   return (
     <>
@@ -47,7 +67,7 @@ const FormModal = ({table, type, data, id}:{
 
       <div
         onClick={() => setOpen(false)}
-        className="absolute top-4 right-4 cursor-pointer"
+        className="absolute top-12 right-8 cursor-pointer"
       >
         <Image src="/close.png" alt="" width={14} height={14} />
       </div>
