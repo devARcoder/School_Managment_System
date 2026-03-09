@@ -54,7 +54,7 @@ export default function Home() {
           <Image src="/logo.png" alt="School Logo" width={144} height={144} />
         </div>
 
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
           Paradise Children <br /> Academy & College
         </h1>
 
