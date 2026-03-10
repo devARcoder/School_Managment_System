@@ -7,8 +7,12 @@ const inter = Inter({subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "PMS - Paradise Managment System",
-  description: "Created by devARcoder - Abdur Razzaq",
-  icons: "/logo.png"
+  description: "reated by devARcoder - Abdur Razzaq",
+  manifest: "/manifest.json",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
