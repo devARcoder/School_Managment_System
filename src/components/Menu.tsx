@@ -8,8 +8,8 @@ const menuItems = [
     items: [
       {
         icon: "/home.png",
-        label: "Home",
-        href: "/",
+        label: "Dashboard",
+        href: "/admin",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
