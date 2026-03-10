@@ -46,7 +46,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex items-center justify-center min-h-screen bg-white text-black px-6">
+    <main className="flex items-center justify-center min-h-screen bg-white text-black px-6 py-6">
       <div className="text-center max-w-2xl">
 
         {/* Logo */}
@@ -72,8 +72,8 @@ export default function Home() {
 
       {/* Modal */}
       {open && (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-          <div className="bg-white p-8 rounded-xl shadow-xl w-2/3 lg:w-1/3 animate-fadeIn flex flex-col items-center">
+        <div className="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-white drop-shadow-lg drop-shadow-green-900 p-8 rounded-xl shadow-xl w-[80%] lg:w-1/3 animate-fadeIn flex flex-col items-center">
           <Image src="/logo.png" alt="" width={60} height={60}/>
             <h2 className="text-xl font-bold mb-6 text-center my-3">Login to PMS</h2>
 
@@ -84,7 +84,7 @@ export default function Home() {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full border p-3 rounded-lg focus:ring-2 focus:ring-green-500"
+                className="w-full border p-3 rounded-lg focus:outline-none"
               />
 
               <input
@@ -93,13 +93,13 @@ export default function Home() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border p-3 rounded-lg focus:ring-2 focus:ring-green-500"
+                className="w-full border p-3 rounded-lg focus:outline-none"
               />
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-green-600 text-white py-3 rounded-lg hover:opacity-90 transition disabled:opacity-50"
+                className="w-full mt-4 bg-green-600 text-white py-3 rounded-lg hover:opacity-90 transition disabled:opacity-50"
               >
                 {loading ? "Sending..." : "Continue"}
               </button>
@@ -107,7 +107,7 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="w-full bg-red-600 text-white py-3 rounded-lg hover:opacity-90 transition mt-2"
+                className="w-full bg-red-600 text-white py-3 rounded-lg hover:opacity-90 transition"
               >
                 Cancel
               </button>
